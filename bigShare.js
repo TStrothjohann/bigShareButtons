@@ -1,8 +1,20 @@
 var facebookButton = "<a href='javascript:fbshareCurrentPage();'><div class='tb-newShareButton tb-facebook'>Auf Facebook teilen</div></a>";
 var twitterButton = "<a href='javascript:twitterShareCurrentPage();'><div class='tb-newShareButton tb-twitter'>Twittern</div></a>";
+var cleanSocialLink = function (linkString) {
+	if (linkString.indexOf("%3Fwt_zmc") === -1) {
+		return linkString
+	} else {
+		var deleteFrom = linkString.indexOf("%3Fwt_zmc")
+		var toDelete = linkString.slice(deleteFrom, linkString.length)
+		newLinkString = linkString.replace(toDelete, '')
+		return newLinkString
+	}
+};
+var theSocialLink = cleanSocialLink(escape(window.location.href));
+
 var fbshareCurrentPage = function () {
   window.open("https://www.facebook.com/sharer/sharer.php?u=" +
-    escape(window.location.href) +
+    theSocialLink +
     "?wt_zmc=sm.ext.zonaudev.facebook.ref.zeitde.dskshare.link.x%26utm_medium=sm%26utm_source=facebook_zonaudev_ext%26utm_campaign=ref%26utm_content=zeitde_dskshare_link_x%26t=" +
     document.title,
     "",
@@ -12,12 +24,12 @@ var fbshareCurrentPage = function () {
 
 var twitterShareCurrentPage = function () {
   window.open("https://twitter.com/intent/tweet?url=" +
-    escape(window.location.href) +
+    theSocialLink +
     "?wt_zmc=sm.ext.zonaudev.twitter.ref.zeitde.dskshare.link.x%26utm_medium=sm%26utm_source=twitter_zonaudev_ext%26utm_campaign=ref%26utm_content=zeitde_dskshare_link_x",
     "",
     "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600"
   );
-}
+};
 
 var bigButtonStyles = "<style>.tb-newShareBox{margin: 40px 0;width:100%;}" +
   ".tb-newShareBox a, .tb-newShareBox a:hover{text-decoration: none; border-bottom: none;}" +
@@ -27,7 +39,6 @@ var bigButtonStyles = "<style>.tb-newShareBox{margin: 40px 0;width:100%;}" +
 
 
 jQuery( document ).ready(function() {
-	console.log("ready");
 	jQuery(".article-body").append(
 	  "<div class='tb-newShareBox'></div>",
 	  bigButtonStyles
