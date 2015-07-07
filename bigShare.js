@@ -25,14 +25,16 @@ var bigButtonStyles = "<style>.tb-newShareBox{margin: 40px 0;width:100%;}" +
   ".tb-facebook{background: #3b5998 url('https://raw.githubusercontent.com/lem45/wordpress/master/zon-large-sharebox/includes/images/FB-f-Logo__blue_29.png') no-repeat scroll 0 1px;margin-right: 25px;padding: 10px 0 5px 40px;}" +
   ".tb-twitter{background: #55acee url('https://rawgit.com/lem45/wordpress/master/zon-large-sharebox/includes/images/TwitterLogo_white.png') no-repeat scroll 7px 3px;padding: 10px 0 5px 50px;}</style>";
 
-jQuery(".article-body").append(
-  "<div class='tb-newShareBox'></div>",
-  bigButtonStyles,
-  facebookButton,
-  twitterButton
-);
 
-// jQuery(".tb-newShareBox").append(
-//   facebookButton,
-//   twitterButton
-// );
+jQuery( document ).ready(function() {
+	console.log("ready");
+	jQuery(".article-body").append(
+	  "<div class='tb-newShareBox'></div>",
+	  bigButtonStyles
+	);
+
+	jQuery(".tb-newShareBox").append(
+	  facebookButton,
+	  twitterButton
+	);
+});
