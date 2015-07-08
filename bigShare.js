@@ -38,8 +38,9 @@ var bigButtonStyles = "<style>.tb-newShareBox{margin: 40px 0;width:100%;}" +
   ".tb-facebook{background: #3b5998 url('http://live0.zeit.de/infografik/bigshare/fb-icon.png') no-repeat scroll 0 1px;margin-right: 25px;padding: 10px 0 5px 40px;}" +
   ".tb-twitter{background: #55acee url('http://live0.zeit.de/infografik/bigshare/twitter-icon.png') no-repeat scroll 7px 3px;padding: 10px 0 5px 50px;}</style>";
 
-if(typeof jQuery !== "undefined" && jQuery(".article-body").length > 0){
-	jQuery( document ).ready(function() {
+
+jQuery( document ).ready(function() {
+	if(jQuery(".article-body").length > 0){
 		jQuery(".article-body").append(
 		  "<div class='tb-newShareBox'></div>",
 		  bigButtonStyles
@@ -52,6 +53,6 @@ if(typeof jQuery !== "undefined" && jQuery(".article-body").length > 0){
 
 		if(jQuery(".show_smk").length > 0){
 			jQuery(".show_smk").remove();
-		};		
-	});
-};
+		};
+	}		
+});
