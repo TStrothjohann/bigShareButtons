@@ -1,4 +1,4 @@
-if(typeof jQuery !== "undefined" && jQuery(".article-body").length > 0){
+if(typeof jQuery !== "undefined" ){
 	var facebookButton = "<a href='javascript:fbshareCurrentPage();'><div class='tb-newShareButton tb-facebook'>Auf Facebook teilen</div></a>";
 	var twitterButton = "<a href='javascript:twitterShareCurrentPage();'><div class='tb-newShareButton tb-twitter'>Twittern</div></a>";
 	var cleanSocialLink = function (linkString) {
@@ -52,6 +52,6 @@ if(typeof jQuery !== "undefined" && jQuery(".article-body").length > 0){
 
 		if(jQuery(".show_smk").length > 0){
 			jQuery(".show_smk").remove();
-		}		
+		};		
 	});
 };
