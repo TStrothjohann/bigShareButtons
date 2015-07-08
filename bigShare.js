@@ -1,5 +1,3 @@
-jQuery( document ).ready(function() {
-//if(typeof jQuery !== "undefined" && jQuery(".article-body").length > 0){
 	var facebookButton = "<a href='javascript:fbshareCurrentPage();'><div class='tb-newShareButton tb-facebook'>Auf Facebook teilen</div></a>";
 	var twitterButton = "<a href='javascript:twitterShareCurrentPage();'><div class='tb-newShareButton tb-twitter'>Twittern</div></a>";
 	var cleanSocialLink = function (linkString) {
@@ -39,8 +37,8 @@ jQuery( document ).ready(function() {
 	  ".tb-newShareButton{height: 22px;width: 170px;display: inline-block;color: #FFF;line-height: 1.1;font-size: 15px;font-weight: normal;font-family: 'Arial', 'Verdana', sans;-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;letter-spacing: 0.05em;}" +
 	  ".tb-facebook{background: #3b5998 url('http://live0.zeit.de/infografik/bigshare/fb-icon.png') no-repeat scroll 0 1px;margin-right: 25px;padding: 10px 0 5px 40px;}" +
 	  ".tb-twitter{background: #55acee url('http://live0.zeit.de/infografik/bigshare/twitter-icon.png') no-repeat scroll 7px 3px;padding: 10px 0 5px 50px;}</style>";
-
-	
+if(typeof jQuery !== "undefined" && jQuery(".article-body").length > 0){
+	jQuery( document ).ready(function() {
 		jQuery(".article-body").append(
 		  "<div class='tb-newShareBox'></div>",
 		  bigButtonStyles
@@ -55,4 +53,4 @@ jQuery( document ).ready(function() {
 			jQuery(".show_smk").remove();
 		};		
 	});
-//};
+};
