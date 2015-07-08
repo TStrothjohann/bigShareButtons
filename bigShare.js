@@ -9,7 +9,7 @@ var cleanSocialLink = function (linkString) {
 		newLinkString = linkString.replace(toDelete, '')
 		return newLinkString
 	}
-}
+};
 
 var theSocialLink = cleanSocialLink(escape(window.location.href));
 
@@ -21,7 +21,7 @@ var fbshareCurrentPage = function () {
     "",
     "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600"
   );
-}
+};
 
 var twitterShareCurrentPage = function () {
   window.open("https://twitter.com/intent/tweet?url=" +
@@ -30,7 +30,7 @@ var twitterShareCurrentPage = function () {
     "",
     "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600"
   );
-}
+};
 
 var bigButtonStyles = "<style>.tb-newShareBox{margin: 40px 0;width:100%;}" +
   ".tb-newShareBox a, .tb-newShareBox a:hover{text-decoration: none; border-bottom: none;}" +
