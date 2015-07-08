@@ -49,5 +49,9 @@ if(typeof jQuery !== "undefined" && jQuery(".article-body").length > 0){
 		  facebookButton,
 		  twitterButton
 		);
+
+		if(jQuery(".show_smk").length > 0){
+			jQuery(".show_smk").remove();
+		}		
 	});
 };
