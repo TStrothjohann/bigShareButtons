@@ -1,5 +1,5 @@
-var facebookButton = "<a href='javascript:fbshareCurrentPage();'><div class='tb-newShareButton tb-facebook'>Auf Facebook teilen</div></a>";
-var twitterButton = "<a href='javascript:twitterShareCurrentPage();'><div class='tb-newShareButton tb-twitter'>Twittern</div></a>";
+var facebookButton = "<a href='#' id='facebook-share'><div class='tb-newShareButton tb-facebook'>Auf Facebook teilen</div></a>";
+var twitterButton = "<a href='#' id='twitter-share' ><div class='tb-newShareButton tb-twitter'>Twittern</div></a>";
 var cleanSocialLink = function (linkString) {
 	if (linkString.indexOf("%3Fwt_zmc") === -1) {
 		return linkString
@@ -50,6 +50,17 @@ jQuery( document ).ready(function() {
 		  facebookButton,
 		  twitterButton
 		);
+
+		jQuery("#facebook-share").on("click", function(){
+			wt.sendinfo({linkId: "stationaer.articlebottom.1.1.social.facebook|https://www.facebook.com/sharer/sharer.php?u=" + theSocialLink });
+			fbshareCurrentPage();
+
+		})
+		jQuery("#twitter-share").on("click", function(){
+			wt.sendinfo({linkId: "stationaer.articlebottom.1.2.social.twitter|https://twitter.com/intent/tweet?url=" + theSocialLink });
+			console.log("stationaer.articlebottom.1.2.social.twitter|https://twitter.com/intent/tweet?url=" + theSocialLink );
+			twitterShareCurrentPage();
+		})
 
 		if(jQuery(".show_smk").length > 0){
 			jQuery(".show_smk").remove();
