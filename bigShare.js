@@ -1,5 +1,5 @@
 var addBigShareButtons = function(){
-	var facebookButton = "<a href='#twitter-share' id='facebook-share'><div class='tb-newShareButton tb-facebook'>Auf Facebook teilen</div></a>";
+	var facebookButton = "<a href='#facebook-share' id='facebook-share'><div class='tb-newShareButton tb-facebook'>Auf Facebook teilen</div></a>";
 	var twitterButton = "<a href='#twitter-share' id='twitter-share' ><div class='tb-newShareButton tb-twitter'>Twittern</div></a>";
 	var cleanSocialLink = function (linkString) {
 		if (linkString.indexOf("%3Fwt_zmc") === -1) {
