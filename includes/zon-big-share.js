@@ -1,10 +1,7 @@
 if (typeof jQuery !== 'undefined') {
-	
 	var $jqry = jQuery.noConflict();
-
-	// all jQuery-Code using $jqry
-	
 }
+
 var addBigShareButtons = function() {
 	var facebookButton = "<a href='#facebook-share' id='facebook-share'><div class='tb-newShareButton tb-facebook'>Auf Facebook teilen</div></a>";
 	var twitterButton = "<a href='#twitter-share' id='twitter-share'><div class='tb-newShareButton tb-twitter'>Twittern</div></a>";
@@ -54,12 +51,18 @@ var addBigShareButtons = function() {
 	
 
 	$jqry("#facebook-share").on("click", function(){
-		wt.sendinfo({linkId: "stationaer.articlebottom.1.1.social.facebook|https://www.facebook.com/sharer/sharer.php?u=" + theSocialLink });
+		if(wt){
+			wt.sendinfo({linkId: "stationaer.articlebottom.1.1.social.facebook|https://www.facebook.com/sharer/sharer.php?u=" + theSocialLink });	
+			console.log("webtrekk is here")
+		}
 		fbshareCurrentPage();
 	});
 
 	$jqry("#twitter-share").on("click", function(){
-		wt.sendinfo({linkId: "stationaer.articlebottom.1.2.social.twitter|https://twitter.com/intent/tweet?url=" + theSocialLink });
+		if(wt){
+			wt.sendinfo({linkId: "stationaer.articlebottom.1.2.social.twitter|https://twitter.com/intent/tweet?url=" + theSocialLink });
+			console.log("webtrekk is here")
+		}
 		twitterShareCurrentPage();
 	});
 }
