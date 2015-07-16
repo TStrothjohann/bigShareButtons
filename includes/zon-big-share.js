@@ -53,7 +53,6 @@ var addBigShareButtons = function() {
 	$jqry("#facebook-share").on("click", function(){
 		if(wt){
 			wt.sendinfo({linkId: "stationaer.articlebottom.1.1.social.facebook|https://www.facebook.com/sharer/sharer.php?u=" + theSocialLink });	
-			console.log("webtrekk is here")
 		}
 		fbshareCurrentPage();
 	});
@@ -61,7 +60,6 @@ var addBigShareButtons = function() {
 	$jqry("#twitter-share").on("click", function(){
 		if(wt){
 			wt.sendinfo({linkId: "stationaer.articlebottom.1.2.social.twitter|https://twitter.com/intent/tweet?url=" + theSocialLink });
-			console.log("webtrekk is here")
 		}
 		twitterShareCurrentPage();
 	});
