@@ -1,19 +1,19 @@
-(function( $, window, document ) {
+(function( $, win, doc ) {
     'use strict';
 
     // remove any query string or fragment identifier
-    var url = window.location.href.split(/[?#]/)[0];
+    var url = win.location.href.split(/[?#]/)[0];
     var campaignCode = {
         wt_zmc: null,
         utm_medium: 'sm',
         utm_source: null,
         utm_campaign: 'ref',
         utm_content: 'zeitde_dskshare_link_x',
-        t: document.title
+        t: doc.title
     };
 
     function shareUrl(url) {
-        window.open(url, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
+        win.open(url, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
     }
 
     function addBigShareButtons() {
